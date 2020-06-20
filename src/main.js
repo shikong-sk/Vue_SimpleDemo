@@ -2,6 +2,13 @@ import Vue from 'vue'
 // import Vue from 'vue/dist/vue.esm.js'
 
 /**
+ * 导入 axios http 请求库
+ */
+import axios from 'axios'
+
+Vue.prototype.$http = axios;
+
+/**
  * 导入路由组件 Vue-router
  */
 import VueRouter from "vue-router";
@@ -46,7 +53,25 @@ Vue.config.productionTip = false
  */
 import router from "@/router";
 
-import App from './App.vue'
+/**
+ * 导入全局状态管理
+ */
+import globalStore from "@/store/store";
+
+import routeStore from "@/store/routeStore";
+
+/**
+ * 引入子模块
+ * @type {Store<unknown>}
+ */
+const store = new Vuex.Store({
+    modules: {
+        globalStore,
+        routeStore
+    },
+})
+
+import App from './App.vue';
 
 new Vue({
     /**
@@ -64,6 +89,8 @@ new Vue({
      *  Vue 2.x 写法
      */
     render: h => h(App),
-    router  // 相当于 router:router
+    router,  // 相当于 router:router
+    store, // 相当于 store:store
+    // store:globalStore,
 }).$mount("#app")
 

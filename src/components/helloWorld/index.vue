@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h5>方法二：全局共享的 count 值为：{{count}}</h5>
+    <h5>全局共享的 count 值为：{{count}}</h5>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -31,12 +33,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'HelloWorld',
   data(){
     return {
       msg: "Hello World!",
     }
+  },
+  computed:{
+        ...mapState({
+          count:state=>state.globalStore.count
+        }), // 作用等同于 count(){return this.$store.state.globalStore.count},
   },
   props: {
   }
