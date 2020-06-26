@@ -16,22 +16,47 @@
     }
  */
 
-import Map from '@/utils/BMapUtils/Map'
-import Point from "@/utils/BMapUtils/Point";
 import Bounds from "@/utils/BMapUtils/Bounds";
+import Geolocation from "@/utils/BMapUtils/Geolocation";
+import InfoWindow from "@/utils/BMapUtils/InfoWindow";
+import Map from '@/utils/BMapUtils/Map'
 import Marker from "@/utils/BMapUtils/Marker";
+import MapOptions from "@/utils/BMapUtils/MapOptions";
 import MarkerOptions from "@/utils/BMapUtils/MarkerOptions";
+import MapType from "@/utils/BMapUtils/MapType";
+import Overlay from "@/utils/BMapUtils/Overlay";
+import Panorama from "@/utils/BMapUtils/Panorama";
+import Pixel from "@/utils/BMapUtils/Pixel";
+import Point from "@/utils/BMapUtils/Point";
+import PositionOptions from "@/utils/BMapUtils/PositionOptions";
+import Size from "@/utils/BMapUtils/Size";
+import StatusCode from "@/utils/BMapUtils/StatusCode";
+import Viewport from "@/utils/BMapUtils/Viewport";
+import ViewportOptions from "@/utils/BMapUtils/ViewportOptions";
 
 const BMapUtils = {
     /**
      * 接口定义
      */
     BMap: {
-        Map,
-        Point,
+
         Bounds,
+        Geolocation,
+        InfoWindow,
+        Map,
+        MapOptions,
+        MapType,
         Marker,
         MarkerOptions,
+        Overlay,
+        Panorama,
+        Pixel,
+        Point,
+        PositionOptions,
+        Size,
+        StatusCode,
+        Viewport,
+        ViewportOptions,
     },
 
     /**
@@ -226,6 +251,353 @@ const BMapUtils = {
         BMAP_ROUTE_TYPE_WALKING: undefined,
     },
     /**
+     * 驾车方案 策略
+     */
+    DrivingPolicy: {
+        /**
+         * 最少时间
+         */
+        BMAP_DRIVING_POLICY_LEAST_TIME: undefined,
+
+        /**
+         * 最短距离
+         */
+        BMAP_DRIVING_POLICY_LEAST_DISTANCE: undefined,
+
+        /**
+         * 避开高速
+         */
+        BMAP_DRIVING_POLICY_AVOID_HIGHWAYS: undefined,
+    },
+    /**
+     * 公共交通线路类型
+     */
+    LineType: {
+        /**
+         * 公交车
+         */
+        BMAP_LINE_TYPE_BUS: undefined,
+
+        /**
+         * 地铁
+         */
+        BMAP_LINE_TYPE_SUBWAY: undefined,
+
+        /**
+         * 渡轮
+         */
+        BMAP_LINE_TYPE_FERRY: undefined,
+    },
+    /**
+     * 公共交通方案策略
+     */
+    TransitPolicy: {
+        /**
+         * 最少时间
+         */
+        BMAP_TRANSIT_POLICY_LEAST_TIME: undefined,
+
+        /**
+         * 最少换乘
+         */
+        BMAP_TRANSIT_POLICY_LEAST_TRANSFER: undefined,
+
+        /**
+         * 最少步行
+         */
+        BMAP_TRANSIT_POLICY_LEAST_WALKING: undefined,
+
+        /**
+         * 不乘地铁
+         */
+        BMAP_TRANSIT_POLICY_AVOID_SUBWAYS: undefined,
+    },
+    /**
+     * 地点类型
+     */
+    PoiType: {
+        /**
+         * 一般位置点
+         */
+        BMAP_POI_TYPE_NORMAL: undefined,
+
+        /**
+         * 公交车站位置点
+         */
+        BMAP_POI_TYPE_BUSSTOP: undefined,
+
+        /**
+         * 地铁车站位置点
+         */
+        BMAP_POI_TYPE_SUBSTOP: undefined,
+    },
+    /**
+     * 麻点密度类型
+     */
+    PointDensityType: {
+        /**
+         * 麻点密度高
+         */
+        BMAP_POINT_DENSITY_HIGH: undefined,
+
+        /**
+         * 麻点密度中等，默认
+         */
+        BMAP_POINT_DENSITY_MEDIUM: undefined,
+
+        /**
+         * 麻点密度低
+         */
+        BMAP_POINT_DENSITY_LOW: undefined,
+    },
+    /**
+     * 预设矢量图标样式
+     */
+    SymbolShapeType: {
+        /**
+         * 圆形，默认半径为1px
+         */
+        BMap_Symbol_SHAPE_CIRCLE: undefined,
+
+        /**
+         * 矩形，默认宽度4px、高度2px
+         */
+        BMap_Symbol_SHAPE_RECTANGLE: undefined,
+
+        /**
+         * 菱形，默认外接圆半径10px
+         */
+        BMap_Symbol_SHAPE_RHOMBUS: undefined,
+
+        /**
+         * 五角星，五角星外接圆半径为10px
+         */
+        BMap_Symbol_SHAPE_STAR: undefined,
+
+        /**
+         * 箭头方向向下的闭合箭头
+         */
+        BMap_Symbol_SHAPE_BACKWARD_CLOSED_ARROW: undefined,
+
+        /**
+         * 箭头方向向上的闭合箭头
+         */
+        BMap_Symbol_SHAPE_FORWARD_CLOSED_ARROW: undefined,
+
+        /**
+         * 箭头方向向下的非闭合箭头
+         */
+        BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW: undefined,
+
+        /**
+         * 箭头方向向上的非闭合箭头
+         */
+        BMap_Symbol_SHAPE_FORWARD_OPEN_ARROW: undefined,
+
+        /**
+         * 定位点图标
+         */
+        BMap_Symbol_SHAPE_POINT: undefined,
+
+        /**
+         * 预设的飞机形状
+         */
+        BMap_Symbol_SHAPE_PLANE: undefined,
+
+        /**
+         * 预设的照相机形状
+         */
+        BMap_Symbol_SHAPE_CAMERA: undefined,
+
+        /**
+         * 预设的警告符号
+         */
+        BMap_Symbol_SHAPE_WARNING: undefined,
+
+        /**
+         * 预设的笑脸形状
+         */
+        BMap_Symbol_SHAPE_SMILE: undefined,
+
+        /**
+         * 预设的钟表形状
+         */
+        BMap_Symbol_SHAPE_CLOCK: undefined,
+
+    },
+    /**
+     * 海量点预设尺寸
+     */
+    SizeType: {
+        /**
+         * 定义点的尺寸为超小，宽高为2px*2px
+         */
+        BMAP_POINT_SIZE_TINY: undefined,
+
+        /**
+         * 定义点的尺寸为很小，宽高为4px*4px
+         */
+        BMAP_POINT_SIZE_SMALLER: undefined,
+
+        /**
+         * 定义点的尺寸为小，宽高为8px*8px
+         */
+        BMAP_POINT_SIZE_SMALL: undefined,
+
+        /**
+         * 定义点的尺寸为正常，宽高为10px*10px，为海量点默认尺寸
+         */
+        BMAP_POINT_SIZE_NORMAL: undefined,
+
+        /**
+         * 定义点的尺寸为大，宽高为16px*16px
+         */
+        BMAP_POINT_SIZE_BIG: undefined,
+
+        /**
+         * 定义点的尺寸为很大，宽高为20px*20px
+         */
+        BMAP_POINT_SIZE_BIGGER: undefined,
+
+        /**
+         * 定义点的尺寸为超大，宽高为30px*30px
+         */
+        BMAP_POINT_SIZE_HUGE: undefined,
+    },
+    /**
+     * 海量点预设形状
+     */
+    ShapeType: {
+        /**
+         * 圆形，为默认形状
+         */
+        BMAP_POINT_SHAPE_CIRCLE: undefined,
+
+        /**
+         * 星形
+         */
+        BMAP_POINT_SHAPE_STAR: undefined,
+
+        /**
+         * 方形
+         */
+        BMAP_POINT_SHAPE_SQUARE: undefined,
+
+        /**
+         * 菱形
+         */
+        BMAP_POINT_SHAPE_RHOMBUS: undefined,
+
+        /**
+         * 水滴状，该类型无size和color属性
+         */
+        BMAP_POINT_SHAPE_WATERDROP: undefined,
+    },
+    /**
+     * 标注的动画效果类型
+     */
+    Animation: {
+        /**
+         * 坠落动画
+         */
+        BMAP_ANIMATION_DROP: undefined,
+
+        /**
+         * 跳动动画
+         */
+        BMAP_ANIMATION_BOUNCE: undefined,
+    },
+    /**
+     * MapTypeControl 的 外观样式
+     */
+    MapTypeControlType: {
+        /**
+         * 按钮水平方式展示，默认采用此类型展示
+         */
+        BMAP_MAPTYPE_CONTROL_HORIZONTAL: undefined,
+
+        /**
+         * 按钮呈下拉列表方式展示
+         */
+        BMAP_MAPTYPE_CONTROL_DROPDOWN: undefined,
+
+        /**
+         * 以图片方式展示类型控件，设置该类型后无法指定maptypes属性
+         */
+        BMAP_MAPTYPE_CONTROL_MAP: undefined,
+    },
+    /**
+     * 长度单位制 类型
+     */
+    LengthUnit: {
+        /**
+         * 公制单位
+         */
+        BMAP_UNIT_METRIC: undefined,
+
+        /**
+         * 英制单位
+         */
+        BMAP_UNIT_IMPERIAL: undefined,
+    },
+    /**
+     * 平移缩放控件 类型
+     */
+    NavigationControlType: {
+        /**
+         * 标准的平移缩放控件（包括平移、缩放按钮和滑块）
+         */
+        BMAP_NAVIGATION_CONTROL_LARGE: undefined,
+
+        /**
+         * 仅包含平移和缩放按钮
+         */
+        BMAP_NAVIGATION_CONTROL_SMALL: undefined,
+
+        /**
+         * 仅包含平移按钮
+         */
+        BMAP_NAVIGATION_CONTROL_PAN: undefined,
+
+        /**
+         * 仅包含缩放按钮
+         */
+        BMAP_NAVIGATION_CONTROL_ZOOM: undefined,
+    },
+    /**
+     * 控件定位
+     */
+    ControlAnchor: {
+        /**
+         * 控件将定位到地图的左上角
+         */
+        BMAP_ANCHOR_TOP_LEFT: undefined,
+
+        /**
+         * 控件将定位到地图的右上角
+         */
+        BMAP_ANCHOR_TOP_RIGHT: undefined,
+
+        /**
+         * 控件将定位到地图的左下角
+         */
+        BMAP_ANCHOR_BOTTOM_LEFT: undefined,
+
+        /**
+         * 控件将定位到地图的右下角
+         */
+        BMAP_ANCHOR_BOTTOM_RIGHT: undefined,
+    },
+    /**
+     * API版本号
+     */
+    APIVersion:{
+        /**
+         * 返回当前API版本。例如，1.2版本返回字符串“1.2”
+         */
+        BMAP_API_VERSION:undefined,
+    },
+    /**
      * 初始化常量值
      */
     initConstant() {
@@ -257,6 +629,93 @@ const BMapUtils = {
         // 线路类型
         BMapUtils.RouteType.BMAP_ROUTE_TYPE_DRIVING = global.BMAP_ROUTE_TYPE_DRIVING
         BMapUtils.RouteType.BMAP_ROUTE_TYPE_WALKING = global.BMAP_ROUTE_TYPE_WALKING
+
+        // 驾车方案 策略
+        BMapUtils.DrivingPolicy.BMAP_DRIVING_POLICY_LEAST_TIME = global.BMAP_DRIVING_POLICY_LEAST_TIME
+        BMapUtils.DrivingPolicy.BMAP_DRIVING_POLICY_LEAST_DISTANCE = global.BMAP_DRIVING_POLICY_LEAST_DISTANCE
+        BMapUtils.DrivingPolicy.BMAP_DRIVING_POLICY_AVOID_HIGHWAYS = global.BMAP_DRIVING_POLICY_AVOID_HIGHWAYS
+
+        // 公共交通线路类型
+        BMapUtils.LineType.BMAP_LINE_TYPE_BUS = global.BMAP_LINE_TYPE_BUS
+        BMapUtils.LineType.BMAP_LINE_TYPE_SUBWAY = global.BMAP_LINE_TYPE_SUBWAY
+        BMapUtils.LineType.BMAP_LINE_TYPE_FERRY = global.BMAP_LINE_TYPE_FERRY
+
+        // 公共交通方案策略
+        BMapUtils.TransitPolicy.BMAP_TRANSIT_POLICY_LEAST_TIME = global.BMAP_TRANSIT_POLICY_LEAST_TIME
+        BMapUtils.TransitPolicy.BMAP_TRANSIT_POLICY_LEAST_TRANSFER = global.BMAP_TRANSIT_POLICY_LEAST_TRANSFER
+        BMapUtils.TransitPolicy.BMAP_TRANSIT_POLICY_LEAST_WALKING = global.BMAP_TRANSIT_POLICY_LEAST_WALKING
+        BMapUtils.TransitPolicy.BMAP_TRANSIT_POLICY_AVOID_SUBWAYS = global.BMAP_TRANSIT_POLICY_AVOID_SUBWAYS
+
+        // 地点类型
+        BMapUtils.PoiType.BMAP_POI_TYPE_NORMAL = global.BMAP_POI_TYPE_NORMAL
+        BMapUtils.PoiType.BMAP_POI_TYPE_BUSSTOP = global.BMAP_POI_TYPE_BUSSTOP
+        BMapUtils.PoiType.BMAP_POI_TYPE_SUBSTOP = global.BMAP_POI_TYPE_SUBSTOP
+
+        // 麻点密度类型
+        BMapUtils.PointDensityType.BMAP_POINT_DENSITY_HIGH = global.BMAP_POINT_DENSITY_HIGH
+        BMapUtils.PointDensityType.BMAP_POINT_DENSITY_MEDIUM = global.BMAP_POINT_DENSITY_MEDIUM
+        BMapUtils.PointDensityType.BMAP_POINT_DENSITY_LOW = global.BMAP_POINT_DENSITY_LOW
+
+        // 预设矢量图标样式
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_CIRCLE = global.BMap_Symbol_SHAPE_CIRCLE
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_RECTANGLE = global.BMap_Symbol_SHAPE_RECTANGLE
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_RHOMBUS = global.BMap_Symbol_SHAPE_RHOMBUS
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_STAR = global.BMap_Symbol_SHAPE_STAR
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_BACKWARD_CLOSED_ARROW = global.BMap_Symbol_SHAPE_BACKWARD_CLOSED_ARROW
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_FORWARD_CLOSED_ARROW = global.BMap_Symbol_SHAPE_FORWARD_CLOSED_ARROW
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW = global.BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_FORWARD_OPEN_ARROW = global.BMap_Symbol_SHAPE_FORWARD_OPEN_ARROW
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_POINT = global.BMap_Symbol_SHAPE_POINT
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_PLANE = global.BMap_Symbol_SHAPE_PLANE
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_CAMERA = global.BMap_Symbol_SHAPE_CAMERA
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_WARNING = global.BMap_Symbol_SHAPE_WARNING
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_SMILE = global.BMap_Symbol_SHAPE_SMILE
+        BMapUtils.SymbolShapeType.BMap_Symbol_SHAPE_CLOCK = global.BMap_Symbol_SHAPE_CLOCK
+
+        // 海量点预设尺寸
+        BMapUtils.SizeType.BMAP_POINT_SIZE_TINY = global.BMAP_POINT_SIZE_TINY
+        BMapUtils.SizeType.BMAP_POINT_SIZE_SMALLER = global.BMAP_POINT_SIZE_SMALLER
+        BMapUtils.SizeType.BMAP_POINT_SIZE_SMALL = global.BMAP_POINT_SIZE_SMALL
+        BMapUtils.SizeType.BMAP_POINT_SIZE_NORMAL = global.BMAP_POINT_SIZE_NORMAL
+        BMapUtils.SizeType.BMAP_POINT_SIZE_BIG = global.BMAP_POINT_SIZE_BIG
+        BMapUtils.SizeType.BMAP_POINT_SIZE_BIGGER = global.BMAP_POINT_SIZE_BIGGER
+        BMapUtils.SizeType.BMAP_POINT_SIZE_HUGE = global.BMAP_POINT_SIZE_HUGE
+
+        // 海量点预设形状
+        BMapUtils.ShapeType.BMAP_POINT_SHAPE_CIRCLE = global.BMAP_POINT_SHAPE_CIRCLE
+        BMapUtils.ShapeType.BMAP_POINT_SHAPE_STAR = global.BMAP_POINT_SHAPE_STAR
+        BMapUtils.ShapeType.BMAP_POINT_SHAPE_SQUARE = global.BMAP_POINT_SHAPE_SQUARE
+        BMapUtils.ShapeType.BMAP_POINT_SHAPE_RHOMBUS = global.BMAP_POINT_SHAPE_RHOMBUS
+        BMapUtils.ShapeType.BMAP_POINT_SHAPE_WATERDROP = global.BMAP_POINT_SHAPE_WATERDROP
+
+        // 标注的动画效果类型
+        BMapUtils.Animation.BMAP_ANIMATION_DROP = global.BMAP_ANIMATION_DROP
+        BMapUtils.Animation.BMAP_ANIMATION_BOUNCE = global.BMAP_ANIMATION_BOUNCE
+
+        // MapTypeControl 的 外观样式
+        BMapUtils.MapTypeControlType.BMAP_MAPTYPE_CONTROL_HORIZONTAL = global.BMAP_MAPTYPE_CONTROL_HORIZONTAL
+        BMapUtils.MapTypeControlType.BMAP_MAPTYPE_CONTROL_DROPDOWN = global.BMAP_MAPTYPE_CONTROL_DROPDOWN
+        BMapUtils.MapTypeControlType.BMAP_MAPTYPE_CONTROL_MAP = global.BMAP_MAPTYPE_CONTROL_MAP
+
+        // 长度单位制 类型
+        BMapUtils.LengthUnit.BMAP_UNIT_METRIC = global.BMAP_UNIT_METRIC
+        BMapUtils.LengthUnit.BMAP_UNIT_IMPERIAL = global.BMAP_UNIT_IMPERIAL
+
+        // 平移缩放控件 类型
+        BMapUtils.NavigationControlType.BMAP_NAVIGATION_CONTROL_LARGE = global.BMAP_NAVIGATION_CONTROL_LARGE
+        BMapUtils.NavigationControlType.BMAP_NAVIGATION_CONTROL_SMALL = global.BMAP_NAVIGATION_CONTROL_SMALL
+        BMapUtils.NavigationControlType.BMAP_NAVIGATION_CONTROL_PAN = global.BMAP_NAVIGATION_CONTROL_PAN
+        BMapUtils.NavigationControlType.BMAP_NAVIGATION_CONTROL_ZOOM = global.BMAP_NAVIGATION_CONTROL_ZOOM
+
+        // 控件定位
+        BMapUtils.ControlAnchor.BMAP_ANCHOR_TOP_LEFT = global.BMAP_ANCHOR_TOP_LEFT
+        BMapUtils.ControlAnchor.BMAP_ANCHOR_TOP_RIGHT = global.BMAP_ANCHOR_TOP_RIGHT
+        BMapUtils.ControlAnchor.BMAP_ANCHOR_BOTTOM_LEFT = global.BMAP_ANCHOR_BOTTOM_LEFT
+        BMapUtils.ControlAnchor.BMAP_ANCHOR_BOTTOM_RIGHT = global.BMAP_ANCHOR_BOTTOM_RIGHT
+
+        // API版本号
+        BMapUtils.APIVersion.BMAP_API_VERSION = global.BMAP_API_VERSION
     },
+
 }
 export default BMapUtils
