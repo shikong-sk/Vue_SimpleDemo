@@ -20,6 +20,7 @@
     }
  */
 
+import AddressComponent from "@/utils/BMapUtils/AddressComponent";
 import Bounds from "@/utils/BMapUtils/Bounds";
 import Geolocation from "@/utils/BMapUtils/Geolocation";
 import InfoWindow from "@/utils/BMapUtils/InfoWindow";
@@ -44,7 +45,6 @@ import MapStyle from "@/utils/BMapUtils/MapStyle";
 import Control from "@/utils/BMapUtils/Control";
 import NavigationControl from "@/utils/BMapUtils/NavigationControl";
 import NavigationControlOptions from "@/utils/BMapUtils/NavigationControlOptions";
-import AddressComponent from "@/utils/BMapUtils/AddressComponent";
 import GeolocationControl from "@/utils/BMapUtils/GeolocationControl";
 import GeolocationControlOptions from "@/utils/BMapUtils/GeolocationControlOptions";
 

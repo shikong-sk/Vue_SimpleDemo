@@ -56,7 +56,7 @@
 
                     // 设置地图缩放倍数
                     _this.Map.setZoom(18)
-                    
+
                 }
             })
 
@@ -64,6 +64,19 @@
             this.Map.enableDragging()
             // 启用滚轮缩放
             this.Map.enableScrollWheelZoom()
+
+            // 监听 缩放动作 结束事件 实时获取并更改 zoom 的值
+            this.Map.addEventListener('zoomend',(e)=>{
+                _this.zoom = this.Map.getZoom()
+            })
+
+        },
+        computed:{
+        },
+        watch:{
+            zoom(n,o){
+                console.log(n,o)
+            }
         },
         data() {
             return {
