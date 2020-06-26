@@ -11,37 +11,57 @@
         async mounted() {
             let _this = this
 
-            console.log(this)
-
+            // 初始化地图对象
             await BMapUtils.init(_this.ak).then((BMap) => {
                 this.$set(this, "BMap", BMap)
             })
 
+            // 挂载地图对象
             this.Map = new this.BMap.Map("Map")
 
+            // 初始化地图
             this.Map.centerAndZoom(new this.BMap.Point(116.404, 39.915), 11)
 
-            console.log(BMapUtils.MapType.BMAP_HYBRID_MAP)
-            console.log(global.BMAP_CONTEXT_MENU_ICON_ZOOMIN)
+            // 设置地图类型
+            this.Map.setMapType(BMapUtils.MapType.BMAP_HYBRID_MAP)
+
+            // for(let x in BMapUtils)
+            // {
+            //     console.log(x,BMapUtils[x])
+            // }
+
+            let scaleCtrl = new this.BMap.ScaleControl({
+                anchor: BMapUtils.ControlAnchor.BMAP_ANCHOR_BOTTOM_LEFT,
+                offset: new BMap.Size(10, 40)
+            });
+
+            this.Map.addControl(scaleCtrl)
 
             let geolocation = new this.BMap.Geolocation();
+
+            // 启用 SDK 辅助定位
             geolocation.enableSDKLocation();
-            geolocation.getCurrentPosition(function(r){
-                console.log(this,r);
-                if(this.getStatus() === StatusCode.BMAP_STATUS_SUCCESS)
-                {
-                    let marker = new _this.BMap.Marker(r.point,{
-                        title:"当前位置"
+
+            // 获取当前位置
+            geolocation.getCurrentPosition(function (r) {
+                if (this.getStatus() === StatusCode.BMAP_STATUS_SUCCESS) {
+                    // 标记点
+                    let marker = new _this.BMap.Marker(r.point, {
+                        title: "当前位置"
                     })
                     _this.Map.addOverlay(marker)
 
+                    // 移动至目标坐标点
                     _this.Map.panTo(r.point)
 
+                    // 设置地图缩放倍数
                     _this.Map.setZoom(18)
                 }
             })
 
+            // 启用拖拽
             this.Map.enableDragging()
+            // 启用滚轮缩放
             this.Map.enableScrollWheelZoom()
         },
         data() {
@@ -61,6 +81,15 @@
 
     #app {
         height: 100%;
+    }
+
+    /*隐藏百度版权*/
+    .BMap_cpyCtrl {
+        display: none;
+    }
+    /*隐藏百度Logo*/
+    .anchorBL{
+        display:none;
     }
 </style>
 
