@@ -12,6 +12,15 @@ const TimeUtils =
         let i = unixTime.getMinutes() < 10 ? '0' + unixTime.getMinutes() : unixTime.getMinutes()
         let S = unixTime.getSeconds() < 10 ? '0' + unixTime.getSeconds() : unixTime.getSeconds()
         return Y + '-' + M + '-' + D + ' ' + H + ':' + i + ':' + S
+    },
+    date2DateTime(dateObj)
+    {
+        if(dateObj instanceof Date)
+        {
+            let unixTime = dateObj.getTime()
+            return this.getDateTime(unixTime)
+        }
+        return ""
     }
 }
 

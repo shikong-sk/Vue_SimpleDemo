@@ -4,6 +4,9 @@
         <h5>方法二：全局共享的 count 值为：{{count}}</h5>
         <h5>全局共享的 count 值为：{{count}}</h5>
         <h5>{{dateTime}}</h5>
+
+        <h5> 全局过滤器：{{date | dateTimeFormat}} </h5>
+        <h5> 全局过滤器 yyyy-mm-dd ：{{date | dateTimeFormat("yyyy-mm-dd")}} </h5>
         <el-button @click="visible = !visible">Button</el-button>
         <el-dialog :visible.sync="visible" title="Hello world">
             <p>Try Element</p>

@@ -1,5 +1,7 @@
 import VueRouter from "vue-router";
 
+import config from "../../vue.config.js";
+
 /**
  *  公共路由定义
  */
@@ -20,12 +22,23 @@ const routes = [
                 name: "HelloWorld",
                 component: () => import("@/components/helloWorld"),
             },
+            {
+                path: "/baiduMap",
+                name: "BaiduMap",
+                component: () => import("@/components/BaiduMap"),
+            },
+            {
+                path: "/map",
+                name: "BMap",
+                component: () => import("@/components/BMap"),
+            },
         ]
     },
 ]
 
 
 const router = new VueRouter({
+    base:config.publicPath,
     mode: "history",
     routes,
 })

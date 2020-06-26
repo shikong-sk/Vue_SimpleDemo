@@ -79,7 +79,24 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI)
 
+// /**
+//  * 全局引入 百度地图 组件
+//  */
+// import BaiduMap from 'vue-baidu-map'
+// Vue.use(BaiduMap,{
+//     ak:'你的密钥'
+// })
+
 import App from './App.vue';
+
+/**
+ * 全局过滤器
+ */
+import Filter from '@/filter/index'
+
+import DateTimeFilter from "@/filter/DateTimeFilter"
+
+Filter.register(DateTimeFilter)
 
 new Vue({
     /**
