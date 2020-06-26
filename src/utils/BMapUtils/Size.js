@@ -11,6 +11,16 @@ export default class Size{
     }
 
     /**
+     * Number 水平方向的数值
+     */
+    width;
+
+    /**
+     * Number 垂直方向的数值
+     */
+    height;
+
+    /**
      * 当且仅当此矩形中的宽度和高度都等于其他矩形的宽度和高度时，返回true
      * @param other Size
      * @returns {boolean} Boolean

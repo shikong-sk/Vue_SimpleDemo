@@ -1,6 +1,10 @@
 /**
  * 百度地图 工具类
  *
+ * 实现动态初始化按需引入 和 调用百度API组件
+ * 通过对部分接口的定义实现IDE的自动提示和函数、常量的解释及帮助功能
+ * 动态初始化百度API中的常量值
+ *
  * @author Shikong
  *
  * Vue-Cli 版本 &lt; 3 配置 项目根路径下的 ./build/webpack.base.conf.js
@@ -33,26 +37,45 @@ import Size from "@/utils/BMapUtils/Size";
 import StatusCode from "@/utils/BMapUtils/StatusCode";
 import Viewport from "@/utils/BMapUtils/Viewport";
 import ViewportOptions from "@/utils/BMapUtils/ViewportOptions";
+import ScaleControl from "@/utils/BMapUtils/ScaleControl";
+import ScaleControlOptions from "@/utils/BMapUtils/ScaleControlOptions";
+import PanOptions from "@/utils/BMapUtils/PanOptions";
+import MapStyle from "@/utils/BMapUtils/MapStyle";
+import Control from "@/utils/BMapUtils/Control";
+import NavigationControl from "@/utils/BMapUtils/NavigationControl";
+import NavigationControlOptions from "@/utils/BMapUtils/NavigationControlOptions";
+import AddressComponent from "@/utils/BMapUtils/AddressComponent";
+import GeolocationControl from "@/utils/BMapUtils/GeolocationControl";
+import GeolocationControlOptions from "@/utils/BMapUtils/GeolocationControlOptions";
 
 const BMapUtils = {
     /**
      * 接口定义
      */
     BMap: {
-
+        AddressComponent,
         Bounds,
+        Control,
         Geolocation,
+        GeolocationControl,
+        GeolocationControlOptions,
         InfoWindow,
         Map,
         MapOptions,
+        MapStyle,
         MapType,
         Marker,
         MarkerOptions,
+        NavigationControl,
+        NavigationControlOptions,
         Overlay,
+        PanOptions,
         Panorama,
         Pixel,
         Point,
         PositionOptions,
+        ScaleControl,
+        ScaleControlOptions,
         Size,
         StatusCode,
         Viewport,

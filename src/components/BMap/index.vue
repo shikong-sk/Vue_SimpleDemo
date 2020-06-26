@@ -56,6 +56,7 @@
 
                     // 设置地图缩放倍数
                     _this.Map.setZoom(18)
+                    
                 }
             })
 
@@ -69,6 +70,8 @@
                 ak: "您的密钥",
                 BMap: undefined,
                 Map: undefined,
+
+                zoom:undefined,
             }
         }
     }
