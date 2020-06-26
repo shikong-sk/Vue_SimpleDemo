@@ -21,6 +21,9 @@
 
             this.Map.centerAndZoom(new this.BMap.Point(116.404, 39.915), 11)
 
+            console.log(BMapUtils.MapType.BMAP_HYBRID_MAP)
+            console.log(global.BMAP_CONTEXT_MENU_ICON_ZOOMIN)
+
             let geolocation = new this.BMap.Geolocation();
             geolocation.enableSDKLocation();
             geolocation.getCurrentPosition(function(r){
