@@ -101,6 +101,8 @@ const BMapUtils = {
                 // console.log(BMap)
                 _this.BMap = BMap
                 // console.log(_this.BMap)
+
+                // 初始化常量
                 BMapUtils.initConstant()
                 resolve(_this.BMap)
             }
