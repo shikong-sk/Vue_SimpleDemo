@@ -115,9 +115,15 @@ const BMapUtils = {
         version = version || "2.0"
 
         return new Promise(function (resolve, reject) {
+            /**
+             * 判断 全局变量是否定义 BMap 对象,若未定义则执行初始化
+             */
             if (typeof global.BMap !== 'undefined') {
 
                 let flag = true
+                /**
+                 * 遍历 全局变量中的 BMap 对象的键 若该键在 BMapUtils中的 BMap 对象中不存在 则视为未初始化
+                 */
                 for(let tmp in global.BMap)
                 {
                     if(global.BMap.hasOwnProperty(tmp))
@@ -141,7 +147,7 @@ const BMapUtils = {
                 // console.log(BMap)
 
                 // 注入 百度地图中提供的 API
-                _this.BMap = Object.assign(_this.BMap,BMap)
+                _this.BMap = Object.assign(_this.BMap,global.BMap)
                 // console.log(_this.BMap)
 
                 // 初始化常量
