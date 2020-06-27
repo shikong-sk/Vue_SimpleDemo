@@ -59,6 +59,9 @@ import Polygon from "@/utils/BMapUtils/Polygon";
 import PolygonOptions from "@/utils/BMapUtils/PolygonOptions";
 import APIVersion from "@/utils/BMapUtils/APIVersion";
 
+/**
+ * 百度地图 工具类
+ */
 const BMapUtils = {
     /**
      * 接口定义
