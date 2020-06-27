@@ -1,19 +1,21 @@
 /**
  * 此类作为getCurrentPosition的可选参数，不能实例化。
  */
-export default class PositionOptions {
+const PositionOptions = {
     /**
-     * 	Boolean	要求浏览器获取最佳结果
+     *    Boolean    要求浏览器获取最佳结果
      */
-    enableHighAccuracy;
+    enableHighAccuracy: undefined,
 
     /**
-     * 	Number	超时时间
+     *    Number    超时时间
      */
-    timeout;
+    timeout: undefined,
 
     /**
-     * Number	允许返回指定时间内的缓存结果。如果此值为0，则浏览器将立即获取新定位结果
+     * Number    允许返回指定时间内的缓存结果。如果此值为0，则浏览器将立即获取新定位结果
      */
-    maximumAge;
+    maximumAge: undefined,
 }
+
+export default PositionOptions

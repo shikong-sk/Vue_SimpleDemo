@@ -45,10 +45,13 @@
             // 获取当前位置
             geolocation.getCurrentPosition(function (r) {
                 if (this.getStatus() === StatusCode.BMAP_STATUS_SUCCESS) {
+
+                    // Marker构造函数的可选参数
+                    let markerOptions = _this.BMap.MarkerOptions;
+                    markerOptions.title = "当前位置"
+
                     // 标记点
-                    let marker = new _this.BMap.Marker(r.point, {
-                        title: "当前位置"
-                    })
+                    let marker = new _this.BMap.Marker(r.point, markerOptions)
                     _this.Map.addOverlay(marker)
 
                     // 移动至目标坐标点

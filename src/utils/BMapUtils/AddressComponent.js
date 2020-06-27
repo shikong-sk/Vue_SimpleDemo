@@ -1,29 +1,31 @@
 /**
  * 此类表示地址解析结果的层次化地址信息，没有构造函数，通过对象字面量形式表示
  */
-export default class AddressComponent {
+const AddressComponent = {
     /**
      * String 门牌号码
      */
-    streetNumber;
+    streetNumber: undefined,
 
     /**
      * String 街道名称
      */
-    street;
+    street: undefined,
 
     /**
      * String 区县名称
      */
-    district;
+    district: undefined,
 
     /**
      * String 城市名称
      */
-    city;
+    city: undefined,
 
     /**
      * String 省份名称
      */
-    province;
+    province: undefined,
 }
+
+export default AddressComponent

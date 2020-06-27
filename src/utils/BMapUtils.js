@@ -47,6 +47,8 @@ import NavigationControl from "@/utils/BMapUtils/NavigationControl";
 import NavigationControlOptions from "@/utils/BMapUtils/NavigationControlOptions";
 import GeolocationControl from "@/utils/BMapUtils/GeolocationControl";
 import GeolocationControlOptions from "@/utils/BMapUtils/GeolocationControlOptions";
+import Icon from "@/utils/BMapUtils/Icon";
+import IconOptions from "@/utils/BMapUtils/IconOptions";
 
 const BMapUtils = {
     /**
@@ -59,6 +61,8 @@ const BMapUtils = {
         Geolocation,
         GeolocationControl,
         GeolocationControlOptions,
+        Icon,
+        IconOptions,
         InfoWindow,
         Map,
         MapOptions,
@@ -99,7 +103,9 @@ const BMapUtils = {
             }
             window.onBMapCallback = function () {
                 // console.log(BMap)
-                _this.BMap = BMap
+
+                // 注入 百度地图中提供的 API
+                _this.BMap = Object.assign(_this.BMap,BMap)
                 // console.log(_this.BMap)
 
                 // 初始化常量

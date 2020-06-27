@@ -1,14 +1,16 @@
 /**
  * 此类代表视野，不可实例化，通过对象字面量形式表示。
  */
-export default class Viewport{
+const Viewport = {
     /**
      * Point 视野中心点
      */
-    center
+    center: undefined,
 
     /**
      * Number 视野级别
      */
-    zoom
+    zoom: undefined,
 }
+
+export default Viewport

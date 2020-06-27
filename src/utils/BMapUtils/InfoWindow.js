@@ -1,5 +1,8 @@
 import Point from "@/utils/BMapUtils/Point";
 
+/**
+ * 此类表示地图上包含信息的窗口
+ */
 export default class InfoWindow {
 
     /**

@@ -11,8 +11,6 @@ import Pixel from "@/utils/BMapUtils/Pixel";
 import Overlay from "@/utils/BMapUtils/Overlay";
 import InfoWindow from "@/utils/BMapUtils/InfoWindow";
 
-
-
 export default class Map {
     /**
      * 实例化地图
