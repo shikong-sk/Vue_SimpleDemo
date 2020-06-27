@@ -52,6 +52,11 @@ import IconOptions from "@/utils/BMapUtils/IconOptions";
 import InfoWindowOptions from "@/utils/BMapUtils/InfoWindowOptions";
 import Label from "@/utils/BMapUtils/Label";
 import LabelOptions from "@/utils/BMapUtils/LabelOptions";
+import Polyline from "@/utils/BMapUtils/Polyline";
+import PolylineOptions from "@/utils/BMapUtils/PolylineOptions";
+import IconSequence from "@/utils/BMapUtils/IconSequence";
+import Polygon from "@/utils/BMapUtils/Polygon";
+import PolygonOptions from "@/utils/BMapUtils/PolygonOptions";
 
 const BMapUtils = {
     /**
@@ -66,6 +71,7 @@ const BMapUtils = {
         GeolocationControlOptions,
         Icon,
         IconOptions,
+        IconSequence,
         InfoWindow,
         InfoWindowOptions,
         Label,
@@ -83,6 +89,10 @@ const BMapUtils = {
         Panorama,
         Pixel,
         Point,
+        Polygon,
+        PolygonOptions,
+        Polyline,
+        PolylineOptions,
         PositionOptions,
         ScaleControl,
         ScaleControlOptions,
