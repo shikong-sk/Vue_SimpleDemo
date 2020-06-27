@@ -16,6 +16,8 @@
                 this.$set(this, "BMap", BMap)
             })
 
+            console.log(BMapUtils.APIVersion.BMAP_API_VERSION)
+
             // 挂载地图对象
             this.Map = new this.BMap.Map("Map")
 
@@ -32,7 +34,7 @@
 
             let scaleCtrl = new this.BMap.ScaleControl({
                 anchor: BMapUtils.ControlAnchor.BMAP_ANCHOR_BOTTOM_LEFT,
-                offset: new BMap.Size(10, 40)
+                offset: new _this.BMap.Size(10, 40)
             });
 
             this.Map.addControl(scaleCtrl)

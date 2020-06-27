@@ -115,9 +115,27 @@ const BMapUtils = {
         version = version || "2.0"
 
         return new Promise(function (resolve, reject) {
-            if (typeof BMap !== 'undefined') {
-                resolve(BMap)
-                return true
+            if (typeof global.BMap !== 'undefined') {
+
+                let flag = true
+                for(let tmp in global.BMap)
+                {
+                    if(global.BMap.hasOwnProperty(tmp))
+                    {
+                        if(!_this.BMap.hasOwnProperty(tmp))
+                        {
+                            flag = false
+                            break
+                        }
+                    }
+
+                }
+
+                if(flag)
+                {
+                    resolve(_this.BMap)
+                    return true
+                }
             }
             window.onBMapCallback = function () {
                 // console.log(BMap)
