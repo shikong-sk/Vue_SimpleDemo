@@ -57,6 +57,7 @@ import PolylineOptions from "@/utils/BMapUtils/PolylineOptions";
 import IconSequence from "@/utils/BMapUtils/IconSequence";
 import Polygon from "@/utils/BMapUtils/Polygon";
 import PolygonOptions from "@/utils/BMapUtils/PolygonOptions";
+import APIVersion from "@/utils/BMapUtils/APIVersion";
 
 const BMapUtils = {
     /**
@@ -64,6 +65,7 @@ const BMapUtils = {
      */
     BMap: {
         AddressComponent,
+        APIVersion,
         Bounds,
         Control,
         Geolocation,
