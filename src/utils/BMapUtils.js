@@ -49,6 +49,9 @@ import GeolocationControl from "@/utils/BMapUtils/GeolocationControl";
 import GeolocationControlOptions from "@/utils/BMapUtils/GeolocationControlOptions";
 import Icon from "@/utils/BMapUtils/Icon";
 import IconOptions from "@/utils/BMapUtils/IconOptions";
+import InfoWindowOptions from "@/utils/BMapUtils/InfoWindowOptions";
+import Label from "@/utils/BMapUtils/Label";
+import LabelOptions from "@/utils/BMapUtils/LabelOptions";
 
 const BMapUtils = {
     /**
@@ -64,6 +67,9 @@ const BMapUtils = {
         Icon,
         IconOptions,
         InfoWindow,
+        InfoWindowOptions,
+        Label,
+        LabelOptions,
         Map,
         MapOptions,
         MapStyle,
