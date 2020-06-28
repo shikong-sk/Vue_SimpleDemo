@@ -85,6 +85,11 @@ import MapTypeOptions from "@/utils/BMapUtils/MapTypeOptions";
 import Projection from "@/utils/BMapUtils/Projection";
 import MercatorProjection from "@/utils/BMapUtils/MercatorProjection";
 import PerspectiveProjection from "@/utils/BMapUtils/PerspectiveProjection";
+import TileLayer from "@/utils/BMapUtils/TileLayer";
+import TileLayerOptions from "@/utils/BMapUtils/TileLayerOptions";
+import TrafficLayer from "@/utils/BMapUtils/TrafficLayer";
+import TrafficLayerOptions from "@/utils/BMapUtils/TrafficLayerOptions";
+import PredictDate from "@/utils/BMapUtils/PredictDate";
 
 /**
  * 百度地图 工具类
@@ -150,6 +155,7 @@ const BMapUtils = {
         Polyline,
         PolylineOptions,
         PositionOptions,
+        PredictDate,
         Projection,
         ScaleControl,
         ScaleControlOptions,
@@ -157,6 +163,10 @@ const BMapUtils = {
         StatusCode,
         Symbol,
         SymbolOptions,
+        TileLayer,
+        TileLayerOptions,
+        TrafficLayer,
+        TrafficLayerOptions,
         Viewport,
         ViewportOptions,
     },
