@@ -64,6 +64,9 @@ import OverviewMapControlOptions from "@/utils/BMapUtils/OverviewMapControlOptio
 import Copyright from "@/utils/BMapUtils/Copyright";
 import CopyrightControl from "@/utils/BMapUtils/CopyrightControl";
 import CopyrightControlOptions from "@/utils/BMapUtils/CopyrightControlOptions";
+import MapTypeControl from "@/utils/BMapUtils/MapTypeControl";
+import MapTypeControlOptions from "@/utils/BMapUtils/MapTypeControlOptions";
+import PanoramaControl from "@/utils/BMapUtils/PanoramaControl";
 
 /**
  * 百度地图 工具类
@@ -95,6 +98,8 @@ const BMapUtils = {
         MapOptions,
         MapStyle,
         MapType,
+        MapTypeControl,
+        MapTypeControlOptions,
         Marker,
         MarkerOptions,
         NavigationControl,
@@ -104,6 +109,7 @@ const BMapUtils = {
         OverviewMapControlOptions,
         PanOptions,
         Panorama,
+        PanoramaControl,
         Pixel,
         Point,
         Polygon,
