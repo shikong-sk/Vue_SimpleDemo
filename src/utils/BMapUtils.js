@@ -82,6 +82,9 @@ import MenuItem from "@/utils/BMapUtils/MenuItem";
 import MenuItemOptions from "@/utils/BMapUtils/MenuItemOptions";
 import ContextMenu from "@/utils/BMapUtils/ContextMenu";
 import MapTypeOptions from "@/utils/BMapUtils/MapTypeOptions";
+import Projection from "@/utils/BMapUtils/Projection";
+import MercatorProjection from "@/utils/BMapUtils/MercatorProjection";
+import PerspectiveProjection from "@/utils/BMapUtils/PerspectiveProjection";
 
 /**
  * 百度地图 工具类
@@ -128,6 +131,7 @@ const BMapUtils = {
         MarkerOptions,
         MenuItem,
         MenuItemOptions,
+        MercatorProjection,
         NavigationControl,
         NavigationControlOptions,
         Overlay,
@@ -136,6 +140,7 @@ const BMapUtils = {
         PanOptions,
         Panorama,
         PanoramaControl,
+        PerspectiveProjection,
         Pixel,
         Point,
         PointCollection,
@@ -145,6 +150,7 @@ const BMapUtils = {
         Polyline,
         PolylineOptions,
         PositionOptions,
+        Projection,
         ScaleControl,
         ScaleControlOptions,
         Size,
