@@ -78,6 +78,10 @@ import Hotspot from "@/utils/BMapUtils/Hotspot";
 import HotspotOptions from "@/utils/BMapUtils/HotspotOptions";
 import Symbol from "@/utils/BMapUtils/Symbol";
 import SymbolOptions from "@/utils/BMapUtils/SymbolOptions";
+import MenuItem from "@/utils/BMapUtils/MenuItem";
+import MenuItemOptions from "@/utils/BMapUtils/MenuItemOptions";
+import ContextMenu from "@/utils/BMapUtils/ContextMenu";
+import MapTypeOptions from "@/utils/BMapUtils/MapTypeOptions";
 
 /**
  * 百度地图 工具类
@@ -93,6 +97,7 @@ const BMapUtils = {
         Bounds,
         Circle,
         CircleOptions,
+        ContextMenu,
         Control,
         Copyright,
         CopyrightControl,
@@ -118,8 +123,11 @@ const BMapUtils = {
         MapType,
         MapTypeControl,
         MapTypeControlOptions,
+        MapTypeOptions,
         Marker,
         MarkerOptions,
+        MenuItem,
+        MenuItemOptions,
         NavigationControl,
         NavigationControlOptions,
         Overlay,

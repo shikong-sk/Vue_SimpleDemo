@@ -6,17 +6,17 @@ export default class MapType {
     /**
      * 	此地图类型展示普通街道视图
      */
-    BMAP_NORMAL_MAP;
+    BMAP_NORMAL_MAP = global.BMAP_NORMAL_MAP;
 
     /**
      * 此地图类型展示卫星视图
      */
-    BMAP_SATELLITE_MAP;
+    BMAP_SATELLITE_MAP = global.BMAP_SATELLITE_MAP;
 
     /**
      * 	此地图类型展示卫星和路网的混合视图
      */
-    BMAP_HYBRID_MAP;
+    BMAP_HYBRID_MAP = global.BMAP_HYBRID_MAP;
 
     /**
      * 创建MapType对象实例
