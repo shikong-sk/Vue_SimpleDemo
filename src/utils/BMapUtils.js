@@ -67,6 +67,10 @@ import CopyrightControlOptions from "@/utils/BMapUtils/CopyrightControlOptions";
 import MapTypeControl from "@/utils/BMapUtils/MapTypeControl";
 import MapTypeControlOptions from "@/utils/BMapUtils/MapTypeControlOptions";
 import PanoramaControl from "@/utils/BMapUtils/PanoramaControl";
+import MapPanes from "@/utils/BMapUtils/MapPanes";
+import Circle from "@/utils/BMapUtils/Circle";
+import CircleOptions from "@/utils/BMapUtils/CircleOptions";
+import GroundOverlay from "@/utils/BMapUtils/GroundOverlay";
 
 /**
  * 百度地图 工具类
@@ -80,6 +84,8 @@ const BMapUtils = {
         Animation,
         APIVersion,
         Bounds,
+        Circle,
+        CircleOptions,
         Control,
         Copyright,
         CopyrightControl,
@@ -87,6 +93,7 @@ const BMapUtils = {
         Geolocation,
         GeolocationControl,
         GeolocationControlOptions,
+        GroundOverlay,
         Icon,
         IconOptions,
         IconSequence,
@@ -96,6 +103,7 @@ const BMapUtils = {
         LabelOptions,
         Map,
         MapOptions,
+        MapPanes,
         MapStyle,
         MapType,
         MapTypeControl,

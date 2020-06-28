@@ -30,17 +30,17 @@ const InfoWindowOptions = {
     /**
      *  Boolean 是否开启信息窗口打开时地图自动移动（默认开启）
      */
-    enableAutoPan: undefined,
+    enableAutoPan: true,
 
     /**
      *  Boolean 是否开启点击地图关闭信息窗口（默认开启）
      */
-    enableCloseOnClick: undefined,
+    enableCloseOnClick: true,
 
     /**
      *  Boolean 是否在信息窗里显示短信发送按钮（默认开启）
      */
-    enableMessage: undefined,
+    enableMessage: true,
 
     /**
      *  String 自定义部分的短信内容，可选项。
