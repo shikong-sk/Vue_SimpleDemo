@@ -93,6 +93,11 @@ import PredictDate from "@/utils/BMapUtils/PredictDate";
 import CustomLayer from "@/utils/BMapUtils/CustomLayer";
 import CustomLayerOptions from "@/utils/BMapUtils/CustomLayerOptions";
 import Custompoi from "@/utils/BMapUtils/Custompoi";
+import PanoramaCoverageLayer from "@/utils/BMapUtils/PanoramaCoverageLayer";
+import LocalSearch from "@/utils/BMapUtils/LocalSearch";
+import LocalSearchOptions from "@/utils/BMapUtils/LocalSearchOptions";
+import LocalResult from "@/utils/BMapUtils/LocalResult";
+import LocalResultPoi from "@/utils/BMapUtils/LocalResultPoi";
 
 /**
  * 百度地图 工具类
@@ -130,6 +135,10 @@ const BMapUtils = {
         InfoWindowOptions,
         Label,
         LabelOptions,
+        LocalResult,
+        LocalResultPoi,
+        LocalSearch,
+        LocalSearchOptions,
         Map,
         MapOptions,
         MapPanes,
@@ -151,6 +160,7 @@ const BMapUtils = {
         PanOptions,
         Panorama,
         PanoramaControl,
+        PanoramaCoverageLayer,
         PerspectiveProjection,
         Pixel,
         Point,
