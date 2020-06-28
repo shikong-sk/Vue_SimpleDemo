@@ -71,6 +71,13 @@ import MapPanes from "@/utils/BMapUtils/MapPanes";
 import Circle from "@/utils/BMapUtils/Circle";
 import CircleOptions from "@/utils/BMapUtils/CircleOptions";
 import GroundOverlay from "@/utils/BMapUtils/GroundOverlay";
+import GroundOverlayOptions from "@/utils/BMapUtils/GroundOverlayOptions";
+import PointCollection from "@/utils/BMapUtils/PointCollection";
+import PointCollectionOptions from "@/utils/BMapUtils/PointCollectionOptions";
+import Hotspot from "@/utils/BMapUtils/Hotspot";
+import HotspotOptions from "@/utils/BMapUtils/HotspotOptions";
+import Symbol from "@/utils/BMapUtils/Symbol";
+import SymbolOptions from "@/utils/BMapUtils/SymbolOptions";
 
 /**
  * 百度地图 工具类
@@ -94,6 +101,9 @@ const BMapUtils = {
         GeolocationControl,
         GeolocationControlOptions,
         GroundOverlay,
+        GroundOverlayOptions,
+        Hotspot,
+        HotspotOptions,
         Icon,
         IconOptions,
         IconSequence,
@@ -120,6 +130,8 @@ const BMapUtils = {
         PanoramaControl,
         Pixel,
         Point,
+        PointCollection,
+        PointCollectionOptions,
         Polygon,
         PolygonOptions,
         Polyline,
@@ -129,6 +141,8 @@ const BMapUtils = {
         ScaleControlOptions,
         Size,
         StatusCode,
+        Symbol,
+        SymbolOptions,
         Viewport,
         ViewportOptions,
     },
