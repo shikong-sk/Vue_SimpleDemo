@@ -1,12 +1,12 @@
-/**
- * 此类表示地图上一个图像标注。
- */
 import Icon from "@/utils/BMapUtils/Icon";
 import Point from "@/utils/BMapUtils/Point";
 import Size from "@/utils/BMapUtils/Size";
 import Label from "@/utils/BMapUtils/Label";
 import Map from "@/utils/BMapUtils/Map";
 
+/**
+ * 此类表示地图上一个图像标注。
+ */
 export default class Marker {
     /**
      * 创建一个图像标注实例。point参数指定了图像标注所在的地理位置

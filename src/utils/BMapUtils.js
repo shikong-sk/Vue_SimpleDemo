@@ -58,6 +58,12 @@ import IconSequence from "@/utils/BMapUtils/IconSequence";
 import Polygon from "@/utils/BMapUtils/Polygon";
 import PolygonOptions from "@/utils/BMapUtils/PolygonOptions";
 import APIVersion from "@/utils/BMapUtils/APIVersion";
+import Animation from "@/utils/BMapUtils/Animation";
+import OverviewMapControl from "@/utils/BMapUtils/OverviewMapControl";
+import OverviewMapControlOptions from "@/utils/BMapUtils/OverviewMapControlOptions";
+import Copyright from "@/utils/BMapUtils/Copyright";
+import CopyrightControl from "@/utils/BMapUtils/CopyrightControl";
+import CopyrightControlOptions from "@/utils/BMapUtils/CopyrightControlOptions";
 
 /**
  * 百度地图 工具类
@@ -68,9 +74,13 @@ const BMapUtils = {
      */
     BMap: {
         AddressComponent,
+        Animation,
         APIVersion,
         Bounds,
         Control,
+        Copyright,
+        CopyrightControl,
+        CopyrightControlOptions,
         Geolocation,
         GeolocationControl,
         GeolocationControlOptions,
@@ -90,6 +100,8 @@ const BMapUtils = {
         NavigationControl,
         NavigationControlOptions,
         Overlay,
+        OverviewMapControl,
+        OverviewMapControlOptions,
         PanOptions,
         Panorama,
         Pixel,

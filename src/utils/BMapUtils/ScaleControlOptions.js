@@ -3,12 +3,12 @@
  */
 const ScaleControlOptions = {
     /**
-     * ControlAnchor     控件的停靠位置
+     * ControlAnchor 控件的停靠位置
      */
     anchor: undefined,
 
     /**
-     * Size    控件的偏移值
+     * Size 控件的偏移值
      */
     offset: undefined,
 }

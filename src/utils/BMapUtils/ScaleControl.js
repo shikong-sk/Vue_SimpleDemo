@@ -1,9 +1,9 @@
+import BMapUtils from "@/utils/BMapUtils";
+
 /**
  * 比例尺控件类
  */
-import BMapUtils from "@/utils/BMapUtils";
-
-export default class ScaleControl{
+export default class ScaleControl {
 
     /**
      * 创建一个比例尺控件
@@ -14,9 +14,9 @@ export default class ScaleControl{
 
     /**
      * 返回比例尺单位制
-      * @returns {{BMAP_UNIT_METRIC: undefined, BMAP_UNIT_IMPERIAL: undefined}}
+     * @returns {{BMAP_UNIT_METRIC: undefined, BMAP_UNIT_IMPERIAL: undefined}}
      */
-    getUnit(){
+    getUnit() {
         return BMapUtils.LengthUnit;
     }
 
@@ -24,5 +24,6 @@ export default class ScaleControl{
      * 设置比例尺单位制
      * @param unit LengthUnit
      */
-    setUnit(unit) {}
+    setUnit(unit) {
+    }
 }
