@@ -90,6 +90,9 @@ import TileLayerOptions from "@/utils/BMapUtils/TileLayerOptions";
 import TrafficLayer from "@/utils/BMapUtils/TrafficLayer";
 import TrafficLayerOptions from "@/utils/BMapUtils/TrafficLayerOptions";
 import PredictDate from "@/utils/BMapUtils/PredictDate";
+import CustomLayer from "@/utils/BMapUtils/CustomLayer";
+import CustomLayerOptions from "@/utils/BMapUtils/CustomLayerOptions";
+import Custompoi from "@/utils/BMapUtils/Custompoi";
 
 /**
  * 百度地图 工具类
@@ -110,6 +113,9 @@ const BMapUtils = {
         Copyright,
         CopyrightControl,
         CopyrightControlOptions,
+        CustomLayer,
+        CustomLayerOptions,
+        Custompoi,
         Geolocation,
         GeolocationControl,
         GeolocationControlOptions,
@@ -175,7 +181,7 @@ const BMapUtils = {
      * 初始化地图
      * @param ak appKey
      * @param version 接口版本
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     init(ak, version) {
         let _this = BMapUtils
