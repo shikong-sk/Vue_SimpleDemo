@@ -87,6 +87,9 @@
                 this.Map.panTo(point)
                 this.Map.setZoom(17)
 
+                /**
+                 * 引入截取的 JSON
+                 */
                 this.$set(this,"res",require("@/list").default.data)
 
                 console.log(this.res,typeof this.res)
@@ -164,7 +167,7 @@
 
 
                     /**
-                     * 效率最高的循环遍历写法
+                     * 效率最高的循环遍历写法 遍历大量数据几乎秒出
                      */
                     for(let i = 0,len = _this.res.length;i<len;i++)
                     {
@@ -205,7 +208,7 @@
                     }
 
                     /**
-                     * 调用方便 但性能较弱
+                     * 调用方便 但性能较弱 遍历大量数据花费很长时间
                      */
                     // _this.res.forEach((data)=>{
                     //
