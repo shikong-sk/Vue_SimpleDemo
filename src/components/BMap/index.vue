@@ -76,6 +76,16 @@
                 _this.zoom = this.Map.getZoom()
             })
 
+            this.Map.addEventListener('addoverlay',(e)=>{
+                /**
+                 * 地图上最多保留 100 个 Marker
+                 */
+                if(this.Map.getOverlays().length >= 100)
+                {
+                    this.Map.removeOverlay(this.overlay.shift())
+                }
+            })
+
             this.init()
         },
         methods:{
@@ -97,50 +107,55 @@
                 let pointList = []
 
                 if(this.res instanceof Array){
-                    this.res.forEach((data,index)=>{
+                    // this.res.forEach((data,index)=>{
+                    //
+                    //     /**
+                    //      * 常规方法
+                    //      */
+                    //     // if(index > 100)return
+                    //     // console.log(index)
+                    //     //
+                    //     // let point = new BMap.Point(data["baiduLongitude"], data["baiduLatitude"]);
+                    //     //
+                    //     // let marker = new BMap.Marker(point)
+                    //     //
+                    //     // this.Map.addOverlay(marker)
+                    //     //
+                    //     // let label = new BMap.Label(marker)
+                    //     //
+                    //     // label.setStyle({
+                    //     //     color:"black"
+                    //     // })
+                    //     //
+                    //     //
+                    //     // let message =
+                    //     //     '<div>' +
+                    //     //     '	<div>设备名:' + data["name"] + '</div>' +
+                    //     //     '	<div>设备地址：' + data["address"] + '</div>' +
+                    //     //     '</div>'
+                    //     //
+                    //     // marker.addEventListener("mouseover",()=>{
+                    //     //     let opts = {
+                    //     //         width: 250,     // 信息窗口宽度
+                    //     //         height: 80,     // 信息窗口高度
+                    //     //     };
+                    //     //     let infoWindow = new BMap.InfoWindow(message, opts);  // 创建信息窗口对象
+                    //     //
+                    //     //     this.Map.openInfoWindow(infoWindow, marker.point);      // 打开信息窗口
+                    //     // })
+                    //
+                    //     /**
+                    //      *
+                    //      * 海量点
+                    //      */
+                    //      pointList.push(new BMap.Point(data["baiduLongitude"], data["baiduLatitude"]));
+                    //
+                    // })
 
-                        /**
-                         * 常规方法
-                         */
-                        // if(index > 100)return
-                        // console.log(index)
-                        //
-                        // let point = new BMap.Point(data["baiduLongitude"], data["baiduLatitude"]);
-                        //
-                        // let marker = new BMap.Marker(point)
-                        //
-                        // this.Map.addOverlay(marker)
-                        //
-                        // let label = new BMap.Label(marker)
-                        //
-                        // label.setStyle({
-                        //     color:"black"
-                        // })
-                        //
-                        //
-                        // let message =
-                        //     '<div>' +
-                        //     '	<div>设备名:' + data["name"] + '</div>' +
-                        //     '	<div>设备地址：' + data["address"] + '</div>' +
-                        //     '</div>'
-                        //
-                        // marker.addEventListener("mouseover",()=>{
-                        //     let opts = {
-                        //         width: 250,     // 信息窗口宽度
-                        //         height: 80,     // 信息窗口高度
-                        //     };
-                        //     let infoWindow = new BMap.InfoWindow(message, opts);  // 创建信息窗口对象
-                        //
-                        //     this.Map.openInfoWindow(infoWindow, marker.point);      // 打开信息窗口
-                        // })
-
-                        /**
-                         *
-                         * 海量点
-                         */
-                         pointList.push(new BMap.Point(data["baiduLongitude"], data["baiduLatitude"]));
-
-                    })
+                    for(let i = 0,length = this.res.length;i<length;i++)
+                    {
+                        pointList.push(new BMap.Point(this.res[i]["baiduLongitude"], this.res[i]["baiduLatitude"]));
+                    }
                 }
 
 
@@ -178,6 +193,8 @@
 
                             let point = new BMap.Point(_this.res[i]["baiduLongitude"],_this.res[i]["baiduLatitude"]);
                             let marker = new BMap.Marker(point)
+
+                            _this.overlay.push(marker)
 
                             _this.Map.addOverlay(marker)
 
@@ -269,6 +286,7 @@
                 BMap: undefined,
                 Map: undefined,
 
+                overlay:[],
                 res :undefined,
                 zoom:undefined,
             }
