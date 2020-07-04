@@ -78,7 +78,7 @@
 
             this.Map.addEventListener('addoverlay',(e)=>{
                 /**
-                 * 地图上最多保留 100 个 Marker
+                 * 地图上最多保留 100 个 Marker 避免百度地图 卡顿
                  */
                 if(this.Map.getOverlays().length >= 100)
                 {

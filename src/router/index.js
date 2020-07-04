@@ -32,6 +32,11 @@ const routes = [
                 name: "BMap",
                 component: () => import("@/components/BMap"),
             },
+            {
+                path: "/uploadImg",
+                name: "uploadImg",
+                component: () => import("@/components/uploadImage"),
+            },
         ]
     },
 ]
